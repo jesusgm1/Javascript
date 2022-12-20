@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Invertir" onclick="Ordenar()">
+    <script>
+         var d = document;
+        for (i = 1; i <= 11; i++) {
+            var objetoLista = d.createElement("li");
+            var TextoLista = d.createTextNode(String.fromCharCode(Math.round(Math.random() * 100)));
+            objetoLista.appendChild(TextoLista);
+            d.querySelector("body").appendChild(objetoLista);
+        }
+        function Ordenar() {
+            var caracteres = d.querySelectorAll("li");
+            var array = [...caracteres];
+                d.write(array.sort());
+        }
+    </script>
+</body>
+</html>

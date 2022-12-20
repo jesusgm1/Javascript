@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Invertir" onclick="InvertirOrden()">
+    <script>
+        var d = document;
+        for (i = 0; i <= 5; i++) {
+            var objetoLista = d.createElement("p");
+            var TextoLista = d.createTextNode("soy el parrafo " + i);
+            objetoLista.appendChild(TextoLista);
+            d.querySelector("body").appendChild(objetoLista);
+            console.log(TextoLista);
+        }
+        function InvertirOrden() {
+            var parrafos = d.querySelectorAll("p");
+            for (i = 0; i <= parrafos.length - 1; i++) {
+                parrafos[i].innerHTML = ("soy el parrafo " + ((parrafos.length - 1) - i));
+            }
+        }
+    </script>
+</body>
+
+</html>

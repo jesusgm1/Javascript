@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Avian</p>
+    <p id="dos">Burstinatrix</p>
+    <p>Sparkman</p>
+    <p>Clayman</p>
+    <p>Bubbleman</p>
+    <input type="button" value="primero" onclick=CambiarTodos()>
+    <input type="button" value="segundo" onclick=CambiarPrimero()>
+    <input type="button" value="tercero" onclick=CambiarPares()>
+    <input type="button" value="cuarto" onclick=CambiarImpares()>
+    <input type="button" value="quinto" onclick=AñadirNuevo()>
+    <input type="button" value="sexto" onclick=Original()>
+    <script>
+        var d = document
+        console.log(d.querySelectorAll("p"));
+        function CambiarTodos() {
+            var Parrafos = d.querySelectorAll("p");
+            for (var i = 0; i <= Parrafos.length-1; i++) {
+                Parrafos[i].style.color = "red";
+            }
+        }
+        function CambiarPrimero() {
+            var Primero = d.querySelector("p");
+            Primero.style.color = "red";
+        }
+        function CambiarPares() {
+            var parrafos = d.querySelectorAll("p");
+            for (var i = 0; i <= parrafos.length-1; i++) {
+                if (i % 2 != 0) {
+                    parrafos[i].style.color = "red";
+                }
+            }
+        }
+        function CambiarImpares() {
+            var parrafos = d.querySelectorAll("p");
+            for (var i = 0; i <= parrafos.length-1; i++) {
+                if (i % 2 == 0) {
+                    parrafos[i].style.color = "red";
+                }
+            }
+        }
+        function AñadirNuevo() {
+            var d = document;
+            var nuevoElemento = prompt("introduce un valor");
+            var objetoLista = d.createElement("p");
+            var TextoLista = d.createTextNode(nuevoElemento);
+            objetoLista.appendChild(TextoLista);
+            var boton = d.querySelector("#dos").appendChild(objetoLista);
+            console.log(boton);
+        }
+        function Original() {
+            var Parrafos = d.querySelectorAll("p");
+            for (var i = 0; i <=Parrafos.length-1; i++) {
+                console.log(Parrafos[i]);
+                Parrafos[i].style.color = "black";
+            }
+            var dentro = d.querySelectorAll("#dos  p");
+            for (var i = 0; i <=dentro.length-1; i++) {
+                console.log(dentro[i]);
+                dentro[i].innerHTML="";
+            }
+        }
+        
+    
+    </script>
+</body>
+
+</html>

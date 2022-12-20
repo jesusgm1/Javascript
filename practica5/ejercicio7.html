@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //para ahorrarnos toda la logica,directamente hacemos math.max y math.min
+        //sin embargo para pasarle un array necesitamos usar apply si no,te lo tratara como
+        //un dato no numerico
+        var numeros = [Math.round(Math.random() * 100),Math.round(Math.random() * 100),Math.round(Math.random() * 100)];
+        console.log(numeros);
+        var ArrayLimites = (numeros) => {
+            arrayLimites = [Math.max.apply(null,numeros),Math.min.apply(null,numeros)];
+            return arrayLimites;
+        }
+        console.log(ArrayLimites(numeros));
+    </script>
+</body>
+
+</html>

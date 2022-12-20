@@ -1,0 +1,184 @@
+<canvas id="tableroA" width="460" height="460"></canvas>
+<canvas id="tableroB" width="460" height="460"></canvas>
+ 
+<script>
+(function(){
+	function Barco() {
+		var cuadricula=[];
+		var that=this;
+ 
+		// creamos la cuadricula completamente vacia
+		for(var i=0;i<10;i++)
+		{
+			cuadricula[i]=[];
+			for(var j=0;j<10;j++)
+			{
+				cuadricula[i][j]=0;
+			}
+		};
+ 
+		// Devuelve la cuadricula
+		this.getCuadricula=function() {
+			return cuadricula;
+		};
+ 
+		/**
+		 * Posiciona los barcos en el tablero.
+		 * Los valores van desde el 0 al 9
+		 *	@param integer inicioH 
+		 *	@param integer inicioV
+		 *	@param integer finH
+		 *	@param integer finV
+		 *	@return boolean true si ha podido crear el barco
+		 */
+		setBarco=function(inicioH,inicioV,finH,finV) {
+			// Revisamos si existe un barco en esa posicion o en sus alrededores
+			if(that.existeBarco(inicioH,inicioV,finH,finV)==false)
+			{
+				// guardamos el barco
+				for(let i=inicioH;i<=finH;i++)
+				{
+					for(let j=inicioV;j<=finV;j++)
+					{
+						cuadricula[i][j]=1;
+					}
+				}
+				return true;
+			}
+			return false;
+		}
+ 
+ 
+		/**
+		 * Función que genera los barcos aleatoriamente
+		 */
+		this.crearBarcosAleatorio=function() {
+			var inicioH=0,inicioV=0,finH=0,finV=0;
+			// definimos las posiciones de los barcos [barcos,posiciones]
+			let barcos=[[1,4], [2,3], [3,2], [4,1]];
+			for(let i=0;i<barcos.length;i++)
+			{
+				for(let j=0;j<barcos[i][0];j++)
+				{
+					inicioH=Math.floor(Math.random()*10);
+					inicioV=Math.floor(Math.random()*10);
+					if(barcos[i][1]==1)
+					{
+						// un barco de una sola casilla
+						if(setBarco(inicioH,inicioV,inicioH,inicioV)==false)
+						{
+							j--;
+						}
+					}else{
+						let direccion=Math.floor(Math.random()*2);
+						if(direccion==0)
+						{
+							// derecha
+							finH=inicioH+barcos[i][1]-1;
+							finV=inicioV;
+						}else if(direccion==1) {
+							// abajo
+							finH=inicioH;
+							finV=inicioV+barcos[i][1]-1;
+						}
+						if(setBarco(inicioH,inicioV,finH,finV)==false)
+						{
+							j--;
+						}
+					}
+				}
+			}
+		}
+ 
+	}
+ 
+	/**
+	 * Funcion que determina si hay un barco en el punto que indicamos o
+	 * en sus alrededores
+	 *	@param integer inicioH 
+	 *	@param integer inicioV
+	 *	@param integer finH
+	 *	@param integer finV
+	 *	@return boolean true si existe un barco en esa posicion
+	 */
+	Barco.prototype.existeBarco=function(inicioH,inicioV,finH,finV) {
+		var cuadricula=this.getCuadricula();
+ 
+		if(finH>9 || finV>9)
+			return true;
+ 
+		inicioH=inicioH>0?inicioH-1:inicioH;
+		inicioV=inicioV>0?inicioV-1:inicioV;
+		finH=finH<9?finH+1:finH;
+		finV=finV<9?finV+1:finV;
+		for(let i=inicioH;i<=finH;i++)
+		{
+			for(let j=inicioV;j<=finV;j++)
+			{
+				if(cuadricula[i][j]==1)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+ 
+	/**
+	 * Funcion que muestra el tablero con los barcos en canvas
+	 * @param canvas objeto del <canvas>
+	 */
+	Barco.prototype.pintarTablero=function(canvas) {
+		var cuadricula=this.getCuadricula();
+		var contexto=canvas.getContext("2d");
+ 
+		let inicio=40;
+ 
+		contexto.beginPath();
+		contexto.lineWidth=0.1;
+		// pintamos la cuadricula
+		for(let i=0;i<=10;i++)
+		{
+			contexto.moveTo(0+inicio,(i*42)+inicio);
+			contexto.lineTo(460,(i*42)+inicio);
+			contexto.moveTo((i*42)+inicio,0+inicio);
+			contexto.lineTo((i*42)+inicio,460);
+		}
+		contexto.stroke();
+ 
+		// pintamos los numeros y letras
+		contexto.beginPath();
+		contexto.font="18px Arial";
+		let letras=Array("A","B","C","D","E","F","G", "H", "I", "J");
+		for(let i=0;i<=9;i++)
+		{
+			contexto.fillText(letras[i],(i*42)+18+inicio,30);
+			contexto.fillText((i<9?"  ":"")+(i+1),10,(i*42)+28+inicio);
+		}
+		contexto.stroke();
+ 
+		// pintamos los barcos
+		contexto.fillStyle="#6a6cf5";
+		for(let i=0;i<=9;i++)
+		{
+			for(let j=0;j<=9;j++)
+			{
+				if(cuadricula[i][j]==1)
+				{
+					contexto.beginPath();
+					contexto.fillRect(j*42+2+inicio,i*42+2+inicio,38,38);
+					contexto.stroke();
+				}
+			}
+		}
+	}
+ 
+	window.barco=function(){return new Barco();}
+})()
+ 
+var cA=document.getElementById("tableroA"); 
+var maquinaA=barco();
+maquinaA.crearBarcosAleatorio();
+maquinaA.pintarTablero(cA);
+console.log(maquinaB.getCuadricula());
+</script>

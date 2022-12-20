@@ -1,0 +1,9 @@
+#caja {
+    border:5px;
+    border-style:dotted;
+    background-color: yellow;
+    height:100px;
+    width:100px;
+    margin:auto;
+    padding:auto;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //pedimos una fecha la usuario y al ponerla dentro del new date
+        //javascript la parsea a formato de fecha comun,sacamos el año
+        //de ambas y los restamos y mostramos años y diferencias
+        
+        var fecha = new Date(prompt("meta una fecha"));
+
+        function restaPorAños(fecha) {
+        var actual = new Date(Date.now());
+        var año = fecha.getFullYear();
+        var diferencia = actual.getFullYear() - año;
+        document.write("la diferencia entre " +año+ " y " +actual.getFullYear()+ " es de " +diferencia+ " años" );
+        }
+
+        restaPorAños(fecha);
+    </script>
+</body>
+</html>

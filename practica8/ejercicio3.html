@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>MATRICULACION EN CICLOS SUNSHINE</h1>
+    <form id="DAW">
+        apellidos <input type="text" id="apellidos">
+        nombre <input type="text" id="nombre"><br>
+        domicilio <input type="text" id="domicilio"><br>
+        sexo <input type="radio" id="sexo" value="hombre">hombre
+        <input type="radio" id="sexo" value="mujer">mujer<br>
+        edad <input type="number" id="edad"><br>
+        FP<select id="FP">
+            <option value="SMR">SMR</option>
+            <option value="DAW">DAW</option>
+        </select><br>
+        curso <select id="curso">
+            <option value="1">1º</option>
+            <option value="2">2º</option>
+        </select><br>
+        <p>modulos en los que se matricula</p>
+        <div id="AsignaturasGS" hidden>
+        <input class="EstudiosGS" type="checkbox" value="1">Entornos de desarrollo<br>
+        <input class="EstudiosGS" type="checkbox" value="1">Base de datos<br>
+        <input class="EstudiosGS" type="checkbox" value="1">Programacion<br>
+        <input class="EstudiosGS" type="checkbox" value="1">Sistemas Informaticos<br>
+        <input class="EstudiosGS" type="checkbox" value="1">Formacion y Orientacion Laboral<br>
+        <input class="EstudiosGS" type="checkbox" value="2">Entorno Cliente<br>
+        <input class="EstudiosGS" type="checkbox" value="2">Entorno Servidor<br>
+        <input class="EstudiosGS" type="checkbox" value="2">Despliegue<br>
+        <input class="EstudiosGS" type="checkbox" value="2">Interfaces<br>
+        <input class="EstudiosGS" type="checkbox" value="2">Empresas<br>
+        </div>
+        <div id="AsignaturasGM" hidden>
+        <input class="EstudiosGM" type="checkbox" value="1">Aplicaciones Ofimaticas<br>
+        <input class="EstudiosGM" type="checkbox" value="1">Redes Locales<br>
+        <input class="EstudiosGM" type="checkbox" value="1">Sistemas Operativos Monopuestos<br>
+        <input class="EstudiosGM" type="checkbox" value="1">Montaje Mantenimiento de Equipo<br>
+        <input class="EstudiosGM" type="checkbox" value="1">Formacion y Orientacion Laboral<br>
+        <input class="EstudiosGM" type="checkbox" value="2">Aplicaciones Web<br>
+        <input class="EstudiosGM" type="checkbox" value="2">Seguridad Informatica<br>
+        <input class="EstudiosGM" type="checkbox" value="2">Servicio en Red<br>
+        <input class="EstudiosGM" type="checkbox" value="2">Sistemas Operativos en Red<br>
+        <input class="EstudiosGM" type="checkbox" value="2">Empresas<br>
+        </div>
+        <textarea id="observaciones" cols="5"></textarea><br>
+        <br>
+        <input type="submit" id="enviarGS" value="enviar">
+        <input type="reset" id="restablecerGS" value="restablecer">
+    </form>
+</body>
+<script src="ejercicio3.js"></script>
+
+</html>

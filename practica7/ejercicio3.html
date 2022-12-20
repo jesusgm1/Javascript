@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="validarF">
+        apellidos<input type="text" id="apellidos" required pattern="^[a-z]{10,40}" minlength="10" maxlength="40"><br>
+        nombre<input type="text" id="nombre" required pattern="^[a-z]" maxlength="20"><br>
+        usuario<input type="text" id="usuario" required pattern="^[a-z]{1,8}[0-9]{1,3}"><br>
+        password<input type="text" id="password" required pattern="[a-z][0-9]\s\-{1,10}" maxlength="10"><br>
+        email<input type="text" id="email" required pattern="/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i"><br>
+        telefono<input type="text" id="telefono" pattern="[0-9]" maxlength="9"><br>
+        movil<input type="text" id="movil" pattern="[0-9]" required><br>
+        observaciones<textarea id="observaciones" cols="5" maxlength="255" required></textarea><br>
+        <input type="submit" id="enviar" value="enviar" disabled><br>
+    </form>
+</body>
+<script src="ejercicio3.js"></script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Pelicula {
+    constructor(id, titulo, director, año, pais, genero, calificacion) {
+        if (/^[a-z]{2}[0-9]{7}$/i.test(id)) {
+            this.id = id;
+        }
+        if (/[a-z]{1,100}$/i.test(titulo)) {
+            this.titulo = titulo;
+        }
+
+        this.director = director;
+
+        if (/\d{4}$/i.test(año)) {
+            this.año = año;
+        }
+        if (Array.isArray(pais)) {
+            this.pais = pais;
+        }
+        if (inArray(genero)) {
+            this.genero = genero;
+        }
+        this.calificacion = calificacion;
+    }
+    static generosAceptados() {
+        return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama",
+            "Family", "Fantasy", "Film", "Noir", "Game - Show", "History", "Horror", "Musical", "Music", "Mystery", "News",
+            "Reality - TV", "Romance", "Sci - Fi", "Short", "Sport", "Talk - Show", "Thriller", "War", "Western"
+        ]
+    }
+
+    fichaTecnica() {
+        return [this.titulo, this.director, this.pais, this.genero, this.calificacion];
+    }
+
+}
+
+
+function inArray(genero, array = Pelicula.generosAceptados()) {
+    for (let i = 0; i < array.length; i++) {
+        if (genero == array[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+let informacionFichaTecnica = ["ab1234567", "Cars", "Jesus", 1554, ["España", "Argentina"], "Action", "asdfas", "fs3456789", "Carsdos", "Jesus Muñoz", 2007, ["España", "Francia"], "Adventure", "dgdfg", "cc1234567", "Carstres", "Antonio", 1487, ["España", "Bolivia"], "News", "hdghdfg"];
+if (informacionFichaTecnica.length == 21) {
+    let peli1 = informacionFichaTecnica.slice(0, 6);
+    let peli2 = informacionFichaTecnica.slice(7, 13);
+    let peli3 = informacionFichaTecnica.slice(14, 20);
+
+    for (i = 0; i < 3; i++) {
+        if (i == 0) {
+            console.log(new Pelicula(...peli1).fichaTecnica());
+        }
+
+        if (i == 1) {
+            console.log(new Pelicula(...peli2).fichaTecnica());
+        }
+
+        if (i == 2) {
+            console.log(new Pelicula(...peli3).fichaTecnica());
+        }
+    }
+}
+    </script>
+</body>
+</html>

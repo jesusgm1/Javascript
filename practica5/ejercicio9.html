@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var original = [Math.round(Math.random() * 100),Math.round(Math.random() * 100),Math.round(Math.random() * 100)];
+        function mostrarPyI(original) {
+            for(i=0;i<=original.length;i++) {
+                if(original[i]%2 == 0) {
+                    var pares = original[i];
+                    var arrayP = [...pares];  
+                }
+                if(original[i]%2 != 0){
+                    var impares = original[i];
+                    var arrayI = [...impares];
+                }
+            }
+            document.write(arrayP + "<br>");
+            document.write(arrayI + "<br>");
+        }
+        document.write(original + "<br>");
+        mostrarPyI(original);
+    </script>
+</body>
+</html>
+</body>
+</html>

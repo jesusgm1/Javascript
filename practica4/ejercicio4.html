@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Rellene sus datos</h1>
+    <form action="" method="post">
+        Nombre:<input class="borrado" type="text" id="nombre">
+        Apellidos:<input class="borrado" type="text" id="apellido">
+        <br>
+        <input type="button" value="Enviar" onclick=Bienvenida(nombre.value,apellido.value)>
+        <input type="button" value="Limpiar" onclick=Borrar()>
+    </form>
+    <p id="respuesta" class="borrado"></p>
+    <script>
+        //metodo de bienvenida
+        function Bienvenida(n, a) {
+            const nombre = n;
+            const apellido = a;
+            const mensaje = document.querySelector("#respuesta");
+            mensaje.innerHTML = ("hola " + nombre + "," + apellido);
+        }
+        //metodo de borrado
+        function Borrar() {
+            //guardamos todos los elementos a borrar en una clase
+            var borrado = document.querySelectorAll(".borrado");
+            for (var i = 0; i <= borrado.length; i++) {
+                //a medida que recorremos el array comprobamos de tipo
+                //es la etiqueta que metemos para usar una propiedad u otra
+                if (borrado[i].tagName == "P") {
+                    //si es un parrafo,usamos innerHTML
+                    borrado[i].innerHTML = (" ");
+                }
+                else {
+                    //si es un imput usamos value;
+                    borrado[i].value = ("");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

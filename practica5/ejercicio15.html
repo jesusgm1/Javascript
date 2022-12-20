@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script> 
+    class Password {
+            constructor(longitud) {
+                this.longitud = longitud_n;
+                this.password = "";
+                for (let i = 0; i < this.longitud; i++) {
+                    this.password += String.fromCharCode((Math.floor((Math.random() * 100)) % 94) + 33);
+                }
+            }
+            get getLongitud() {
+                return this.longitud;
+            }
+            get getPassword() {
+                return this.password;
+            }
+            setPassword(password) {
+                this.password = password;
+            }
+            isStrong(password) {
+             var mayusculas = 0;
+             var minusculas = 0;
+             var numeros = 0;
+             for(let i = 0;i < password.length;i++) {
+                if(password[i] == (password[i].toUpperCase())){
+                    mayusculas++;
+                }
+                if(password[i] == (password[i].toLowerCase())) {
+                    minusculas++;
+                }
+                if(Number(password[i])) {
+                    numeros++;
+                }
+             }
+             if(mayusculas > 2 && minusculas > 1 && numeros > 5) {
+                return true;
+             }
+             else {
+                return false;
+             }
+            }
+            encriptar(password) {
+                let nuevaPassword = "";
+                for(let i=0;i < password.length;i++) {
+                    if((password.charCodeAt(i)>= 65 && password.charCodeAt(i) <= 90) || (password.charCodeAt(i)>= 97 && password.charCodeAt(i) <= 122)) {
+                        nuevaPassword += String.fromCharCode(password.charCodeAt(i) / 5);
+                    } if(!Number.isNaN(this.password.charAt(i))) {
+                       nuevaPassword += String.fromCharCode(password.charCodeAt(i) + 97);
+                    }
+                }
+                return nuevaPassword;
+            }
+        }
+    </script>
+    <script>
+        var longitud = prompt("meta una longitud: ");
+        var longitud_n = parseInt(longitud)
+        var contraseña1 = new Password(longitud_n);
+        console.log(contraseña1.getLongitud);
+        console.log(contraseña1.getPassword);
+        console.log(contraseña1.isStrong(contraseña1.getPassword));
+        console.log(contraseña1.encriptar(contraseña1.getPassword));
+    </script>
+</body>
+</html>

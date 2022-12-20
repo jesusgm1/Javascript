@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var vocales = 0;
+        var consonantes = 0;
+        var palabra = prompt("meta una palabra");
+
+    function contar(palabra) {
+       for(i=0;i <= palabra.length -1;i++) {
+        if(palabra[i].includes("a") ||  palabra[i].includes("e") || palabra[i].includes("i") || 
+        palabra[i].includes("o") || palabra[i].includes("u")) {
+            vocales++;
+        }
+        else {
+            consonantes++;
+        }
+       }
+       document.write("hay " +vocales+ " vocales en " +palabra);
+       document.write("<br>");
+       document.write("hay " +consonantes+ " consonante en " +palabra);
+    }
+
+    contar(palabra);
+    </script>
+</body>
+</html>

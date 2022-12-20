@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var original = [Math.round(Math.random() * 100),Math.round(Math.random() * 100),Math.round(Math.random() * 100)];
+        function ordenar(original) {
+            var ordenadoAsc = [...original.sort()];
+            var ordenadoDesc = [...original.sort().reverse()];
+            document.write(ordenadoAsc + "<br>");
+            document.write(ordenadoDesc + "<br>");
+        }
+        document.write(original + "<br>");
+        ordenar(original);
+    </script>
+</body>
+</html>

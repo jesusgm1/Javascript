@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>MATRICULACION EN DAW</h1>
+                <form id="DAW">
+                apellidos <input type="text" id="apellidos">
+                nombre <input type="text" id="nombre"><br>
+                domicilio <input type="text" id="domicilio"><br>
+                sexo <input type="radio" id="sexo" value="hombre">hombre
+                <input type="radio" id="sexo" value="mujer">mujer<br>
+                edad <input type="number" id="edad"><br>
+                curso <select id="GS">
+                    <option value="1">1º</option>
+                    <option value="2">2º</option>
+                </select><br>
+                <p>modulos en los que se matricula</p>
+                <input class="EstudiosGS" type="checkbox" value="1" id="Entornos de desarrollo">Entornos de desarrollo<br>
+                <input class="EstudiosGS" type="checkbox" value="1" id="BBDD">Base de datos<br>
+                <input class="EstudiosGS" type="checkbox" value="1" id="Programacion">Programacion<br>
+                <input class="EstudiosGS" type="checkbox" value="1" id="SIN">Sistemas Informaticos<br>
+                <input class="EstudiosGS" type="checkbox" value="1" id="FOL">Formacion y Orientacion Laboral<br>
+                <input class="EstudiosGS" type="checkbox" value="2" id="Entorno Cliente">Entorno Cliente<br>
+                <input class="EstudiosGS" type="checkbox" value="2" id="Entorno Servidor">Entorno Servidor<br>
+                <input class="EstudiosGS" type="checkbox" value="2" id="Despliegue">Despliegue<br>
+                <input class="EstudiosGS" type="checkbox" value="2" id="Interfaces">Interfaces<br>
+                <input class="EstudiosGS" type="checkbox" value="2" id="Empresas">Empresas<br>
+                <textarea id="observacionesGS" cols="5"></textarea><br>
+                <br>
+                <input type="submit" id="enviarGS" value="enviar">
+                <input type="reset" id="restablecerGS" value="restablecer">
+                </form>
+            </div>
+            <div class="col-6">
+                <h1>MATRICULACION EN SMR</h1>
+                <form id="SMR">
+                    apellidos <input type="text" id="Apellidos">
+                    nombre <input type="text" id="Nombre"><br>
+                    domicilio <input type="text" id="Domicilio"><br>
+                    sexo <input type="radio" id="Sexo" value="hombre">hombre
+                    <input type="radio" id="Sexo" value="mujer">mujer<br>
+                    edad <input type="number" id="Edad"><br>
+                    curso <select id="GM">
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                    </select><br>
+                    <p>modulos en los que se matricula</p>
+                    <input class="EstudiosGM" type="checkbox" value="1" id = "APO">Aplicaciones Ofimaticas<br>
+                    <input class="EstudiosGM" type="checkbox" value="1" id="Redes">Redes Locales<br>
+                    <input class="EstudiosGM" type="checkbox" value="1" id="SOM">Sistemas Operativos Monopuestos<br>
+                    <input class="EstudiosGM" type="checkbox" value="1" id="Montaje">Montaje y Mantenimiento de Equipo<br>
+                    <input class="EstudiosGM" type="checkbox" value="1" id="FOL">Formacion y Orientacion Laboral<br>
+                    <input class="EstudiosGM" type="checkbox" value="2" id="Aplicaciones Web">Aplicaciones Web<br>
+                    <input class="EstudiosGM" type="checkbox" value="2" id="Seguridad">Seguridad Informatica<br>
+                    <input class="EstudiosGM" type="checkbox" value="2" id="Servicios">Servicio en Red<br>
+                    <input class="EstudiosGM" type="checkbox" value="2" id="SOR">Sistemas Operativos en Red<br>
+                    <input class="EstudiosGM" type="checkbox" value="2" id="Empresas">Empresas<br>
+                    <textarea id="Observaciones" cols="5"></textarea><br>
+                    <br>
+                    <input type="submit" id="enviarGM" value="enviar">
+                    <input type="reset" id="restablecerGM" value="restablecer">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="ejercicio2.js"></script>
+
+</html>
